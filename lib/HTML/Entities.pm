@@ -480,9 +480,12 @@ sub num_entity {
 }
 
 # Set up aliases
-*encode             = \&encode_entities;
-*encode_numeric     = \&encode_entities_numeric;
-*encode_numerically = \&encode_entities_numeric;
-*decode             = \&decode_entities;
+{
+    no warnings 'once';
+    *encode             = \&encode_entities;
+    *encode_numeric     = \&encode_entities_numeric;
+    *encode_numerically = \&encode_entities_numeric;
+    *decode             = \&decode_entities;
+}
 
 1;
