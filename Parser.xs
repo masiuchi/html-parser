@@ -671,17 +671,4 @@ _probably_utf8_chunk(string)
     OUTPUT:
         RETVAL
 
-int
-UNICODE_SUPPORT()
-    PROTOTYPE:
-    CODE:
-#ifdef UNICODE_HTML_PARSER
-       RETVAL = 1;
-#else
-       RETVAL = 0;
-#endif
-    OUTPUT:
-       RETVAL
-
-
 MODULE = HTML::Parser		PACKAGE = HTML::Parser

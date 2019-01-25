@@ -488,4 +488,8 @@ sub num_entity {
     *decode             = \&decode_entities;
 }
 
+sub UNICODE_SUPPORT {
+    $^V >= version->parse('5.8.0') ? 1 : 0;
+}
+
 1;
