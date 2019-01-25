@@ -116,11 +116,14 @@ sub netscape_buggy_comment    # legacy
 
 # set up method stubs
 sub text { }
-*start       = \&text;
-*end         = \&text;
-*comment     = \&text;
-*declaration = \&text;
-*process     = \&text;
+{
+    no warnings 'once';
+    *start       = \&text;
+    *end         = \&text;
+    *comment     = \&text;
+    *declaration = \&text;
+    *process     = \&text;
+}
 
 1;
 
